@@ -1,0 +1,25 @@
+<html>
+  <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <title>Analizador CSV</title>
+     <link href="global.css" rel="stylesheet" type="text/css">
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+     <script type="text/javascript" src="csv.js"></script>
+  </head>
+  <body>
+    <h1>Valores separados por comas</h1>
+    <div>
+      <i>Escribe una cadena de valores separados por coma. Haz click sobre el boton play. El programa mostrara la tabla con los datos especificados.</i>
+    </div>
+    <table>
+      <tr>
+        <th>Cadena CSV:</th> <!-- autofocus attribute is HTML5 -->
+        <td><textarea autofocus cols = "80" rows = "5" id="original"></textarea></td> 
+      </tr>
+    </table>
+    <button type="button">play:</button><br>
+    <span class="output" id="finaltable"></span>
+  </body>
+</html>
