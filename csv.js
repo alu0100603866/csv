@@ -10,7 +10,12 @@ function calculate() {
   var result;
   var original       = document.getElementById("original");
   var temp = original.value;
-  var regexp = /\s*"((?:[^"\\]|\\.)*)"\s*,?|\s*([^,]+),?|\s*,/g;
+  var regexp = /\s*"((?:[^"\\]|\\.*")*)"\s*,?|\s*([^,]+),?|\s*,/g;
+  
+/** expresion regular modificada para permitir comillas dentro de una            *  cadena, poniendola de la forma \" y permitir cerrarla
+*/
+  
+  
   var lines = temp.split(/\n+\s*/);
   var commonLength = NaN;
   var r = [];
@@ -47,7 +52,7 @@ function calculate() {
       r.push(tr+_.template(row, {items : result})+"</tr>");
     }
     else {
-      alert('ERROR! row '+temp+' does not look as legal CSV');
+      alert('ERROR! fila '+temp+' no parece una cadena CSV legal');
       error = true;
     }
   }
@@ -58,7 +63,8 @@ function calculate() {
 }
 
 window.onload = function() {
-  // If the browser supports localStorage and we have some stored data
+  // Si el navegador soporta el guardado de datos local y tenemos datos
+  //almacenados 
   if (window.localStorage && localStorage.original) {
     document.getElementById("original").value = localStorage.original;
   }
